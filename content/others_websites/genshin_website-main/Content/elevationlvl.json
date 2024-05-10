@@ -1,0 +1,148 @@
+[
+  {
+    "elevationlvl": 20,
+    "materials": [
+      {
+        "itemname": "mora",
+        "amount": 20000
+      },
+      {
+        "itemname": "green_element_stone",
+        "amount": 1
+      },
+      {
+        "itemname": "natural_material",
+        "amount": 3
+      },
+      {
+        "itemname": "grey_monster_material",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "elevationlvl": 40,
+    "materials": [
+      {
+        "itemname": "mora",
+        "amount": 40000
+      },
+      {
+        "itemname": "blue_element_stone",
+        "amount": 3
+      },
+      {
+        "itemname": "natural_material",
+        "amount": 10
+      },
+      {
+        "itemname": "grey_monster_material",
+        "amount": 15
+      },
+      {
+        "itemname": "boss_material",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "elevationlvl": 50,
+    "materials": [
+      {
+        "itemname": "mora",
+        "amount": 60000
+      },
+      {
+        "itemname": "blue_element_stone",
+        "amount": 6
+      },
+      {
+        "itemname": "natural_material",
+        "amount": 20
+      },
+      {
+        "itemname": "green_monster_material",
+        "amount": 12
+      },
+      {
+        "itemname": "boss_material",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "elevationlvl": 60,
+    "materials": [
+      {
+        "itemname": "mora",
+        "amount": 80000
+      },
+      {
+        "itemname": "violet_element_stone",
+        "amount": 3
+      },
+      {
+        "itemname": "natural_material",
+        "amount": 30
+      },
+      {
+        "itemname": "green_monster_material",
+        "amount": 18
+      },
+      {
+        "itemname": "boss_material",
+        "amount": 8
+      }
+    ]
+  },
+  {
+    "elevationlvl": 70,
+    "materials": [
+      {
+        "itemname": "mora",
+        "amount": 100000
+      },
+      {
+        "itemname": "violet_element_stone",
+        "amount": 6
+      },
+      {
+        "itemname": "natural_material",
+        "amount": 45
+      },
+      {
+        "itemname": "blue_monster_material",
+        "amount": 12
+      },
+      {
+        "itemname": "boss_material",
+        "amount": 12
+      }
+    ]
+  },
+  {
+    "elevationlvl": 80,
+    "materials": [
+      {
+        "itemname": "mora",
+        "amount": 120000
+      },
+      {
+        "itemname": "golden_element_stone",
+        "amount": 6
+      },
+      {
+        "itemname": "natural_material",
+        "amount": 60
+      },
+      {
+        "itemname": "blue_monster_material",
+        "amount": 24
+      },
+      {
+        "itemname": "boss_material",
+        "amount": 20
+      }
+    ]
+  }
+]

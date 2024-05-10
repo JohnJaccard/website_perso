@@ -1,0 +1,184 @@
+body {
+    background-color: #262632;
+    font-family: 'Signika', sans-serif;
+    align-items: center;
+    text-align: center;
+    color: #f9f1e2;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+#characterInfo {
+    background-color: #575c68;
+    border-radius: 40px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 24px 32px rgba(0, 0, 0, 0.2);
+    border:7px #58616d solid;
+}
+
+a {
+    color: #575c68;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img.character-image, img.element-icon {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.character-info p {
+    text-align: center;
+}
+
+.dark-overlay {
+    background-color: #16161d;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust the height to match your design */
+    margin-top: 0; /* Remove the top margin to eliminate the space */
+    z-index: 1;
+}
+
+.dark-overlay::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    height: 25px;
+    background: linear-gradient(to bottom, transparent, #262632);
+}
+
+/* Additional CSS styling */
+.character-image {
+    max-width: 300px;
+}
+.element-icon {
+    max-width: 50px;
+}
+.talent-book-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+.talent-book-description {
+    font-size: 18px;
+    font-weight: bold;
+}
+/* Style the new talent book names and days */
+.green-talent-book-name {
+    color: whitesmoke;
+}
+.blue-talent-book-name {
+    color: whitesmoke;
+}
+.violet-talent-book-name {
+    color: whitesmoke;
+}
+.days-talent-book-description {
+    font-size: 18px;
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+    #characterInfo {
+        max-width: 400px;
+    }
+}
+
+#return-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2; /* Place it above other content */
+}
+
+.return-image {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+#levelInfo {
+    background-color: #575c68;
+    border-radius: 40px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 24px 32px rgba(0, 0, 0, 0.2);
+    border: 7px #58616d solid;
+}
+#levelInfo p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#levelInfo button {
+    margin: 0;
+}
+.variable-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.variable-label {
+    font-weight: bold;
+}
+.slider-label input[type="range"] {
+    width: 100px;
+}
+
+.total-exp {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.total-mora {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.exp-text {
+    display: flex;
+    align-items: center;
+}
+
+.expbook-image {
+    margin-left: 10px; /* Adjust margin as needed for spacing */
+}
+
+.button-style{
+    color:white;
+    background-color: transparent;
+    outline: none;
+    margin:10px
+
+}

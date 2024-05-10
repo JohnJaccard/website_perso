@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Genshin Impact Characters</title>
+    <link rel="stylesheet" type="text/css" href="./Content/stylemain.css" />
+    <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet'>
+</head>
+
+<body>
+<div class="dark-overlay">
+    <a href="../../../index.html" id="return-button">
+        <img src="./Content/Images/return.png" alt="Return" class="return-image">
+    </a>
+    <h1>Genshin Impact Characters</h1>
+    <div id="searchContainer">
+        <input type="text" id="searchQuery" placeholder="Search by Name">
+    </div>
+    <div id="filterContainer" class="element-filter-container">
+        <div class="element-filter-buttons">
+            <button class="filter-button" data-element="Pyro">
+                <img src="./Content/Images/Element_Pyro.png" alt="Pyro" class="element-image">
+            </button>
+            <button class="filter-button" data-element="Hydro">
+                <img src="./Content/Images/Element_Hydro.png" alt="Hydro" class="element-image">
+            </button>
+            <button class="filter-button" data-element="Anemo">
+                <img src="./Content/Images/Element_Anemo.png" alt="Anemo" class="element-image">
+            </button>
+            <button class="filter-button" data-element="Electro">
+                <img src="./Content/Images/Element_Electro.png" alt="Electro" class="element-image">
+            </button>
+            <button class="filter-button" data-element="Dendro">
+                <img src="./Content/Images/Element_Dendro.png" alt="Dendro" class="element-image">
+            </button>
+            <button class="filter-button" data-element="Cryo">
+                <img src="./Content/Images/Element_Cryo.png" alt="Cryo" class="element-image">
+            </button>
+            <button class="filter-button" data-element="Geo">
+                <img src="./Content/Images/Element_Geo.png" alt="Geo" class="element-image">
+            </button>
+        </div>
+        <div class="remove-filter-container">
+            <button class="filter-button remove-filter">Remove Filter</button>
+        </div>
+    </div>
+</div>
+<div id="characterList">
+    <!-- Character divs will be dynamically added here -->
+</div>
+
+<div id="talentBooksOfTheDay">
+    <!-- Talent books of the day will be displayed here -->
+</div>
+
+<script>
+    // Define a variable to store characters data
+    var charactersData;
+
+    // Fetch characters data from characters.json
+    fetch('./Content/characters.json')
+        .then(response => response.json())
+        .then(data => {
+            charactersData = data;
+            // Display all characters initially
+            displayCharacters(charactersData);
+        })
+        .catch(error => {
+            console.error('Error loading JSON data:', error);
+        });
+
+    // Function to display characters
+    function displayCharacters(characters) {
+        var characterList = document.getElementById('characterList');
+        characterList.innerHTML = ''; // Clear the characterList div
+
+        characters.forEach(function (character) {
+            var characterLink = document.createElement('a');
+            characterLink.href = 'characterpage.html?character=' + encodeURIComponent(character.DisplayName);
+            characterLink.classList.add('character-link');
+
+            var characterDiv = document.createElement('div');
+            characterDiv.classList.add('character');
+
+            var characterImage = document.createElement('img');
+            characterImage.src = './Content/Images/' + character.ImageUri;
+            characterImage.alt = character.DisplayName;
+            characterImage.classList.add('character-image');
+
+            var characterInfo = document.createElement('div');
+            characterInfo.classList.add('character-info');
+
+            var characterName = document.createElement('h2');
+            characterName.textContent = character.DisplayName;
+
+            var characterDetails = document.createElement('div');
+            characterDetails.classList.add('character-details');
+
+            var characterElement = document.createElement('p');
+
+            var characterElementImage = document.createElement('img');
+            characterElementImage.src = './Content/Images/Element_' + character.Element + '.png';
+            characterElementImage.alt = character.Element;
+            characterElementImage.classList.add('element-icon');
+            characterElement.appendChild(characterElementImage);
+
+            var characterRarity = document.createElement('p');
+            characterRarity.textContent = character.Rarity + ' Star';
+
+            characterDetails.appendChild(characterElement);
+            characterDetails.appendChild(characterRarity);
+
+            characterInfo.appendChild(characterName);
+            characterInfo.appendChild(characterDetails);
+
+            characterDiv.appendChild(characterImage);
+            characterDiv.appendChild(characterInfo);
+
+            characterLink.appendChild(characterDiv);
+            characterList.appendChild(characterLink);
+        });
+    }
+
+    // Add event listener to the search input field for real-time filtering
+    document.getElementById('searchQuery').addEventListener('input', function () {
+        var searchQuery = document.getElementById('searchQuery').value.trim().toLowerCase();
+
+        var filteredCharacters = charactersData.filter(function (character) {
+            return character.DisplayName.toLowerCase().includes(searchQuery);
+        });
+
+        displayCharacters(filteredCharacters);
+    });
+
+    // Add event listener to filter buttons
+    var filterButtons = document.querySelectorAll('.filter-button');
+    filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            var elementFilter = this.getAttribute('data-element');
+            if (elementFilter) {
+                var filteredCharacters = charactersData.filter(function (character) {
+                    return character.Element === elementFilter;
+                });
+                displayCharacters(filteredCharacters);
+            } else {
+                // "Remove Filter" button clicked, so show all characters
+                displayCharacters(charactersData);
+                document.getElementById('searchQuery').value = ''; // Clear the search input
+            }
+        });
+    });
+
+    // Function to display talent books of the day
+    // Function to display talent books of the day
+    function displayTalentBooksOfTheDay(day, talentBooksData) {
+        const talentBooksContainer = document.getElementById('talentBooksOfTheDay');
+        talentBooksContainer.innerHTML = ''; // Clear the container
+
+        // Display "Today's talent books:"
+        const talentBookTitle = document.createElement('p');
+        talentBookTitle.textContent = "Today's talent books:";
+        talentBookTitle.classList.add('talentbooktitle');
+        talentBooksContainer.appendChild(talentBookTitle);
+
+        if (day === 'Sunday') {
+            // Display " all" on Sunday
+            const talentBookall = document.createElement('p');
+            talentBookall.textContent = "all";
+            talentBookall.classList.add('talentbooktitle');
+            talentBooksContainer.appendChild(talentBookall);
+        } else {
+            const talentBooksForDay = talentBooksData.filter(item => item.Days.includes(day));
+
+            if (talentBooksForDay.length > 0) {
+                talentBooksForDay.forEach(talentBook => {
+                    // Create a paragraph for the talent book name
+                    const talentBookName = document.createElement('p');
+                    talentBookName.textContent = talentBook.Name.violet;
+                    talentBooksContainer.appendChild(talentBookName);
+
+                    // List characters that have this talent book's ID
+                    const charactersWithTalentBook = charactersData.filter(character => character.talentbookId === talentBook.Id);
+
+                    charactersWithTalentBook.forEach(character => {
+                        // Create an image for the character
+                        const characterImage = document.createElement('img');
+                        characterImage.src = './Content/Images/' + character.ImageUri;
+                        characterImage.alt = character.DisplayName;
+                        characterImage.classList.add('character-image-small');
+                        talentBooksContainer.appendChild(characterImage);
+                    });
+                });
+            } else {
+                talentBooksContainer.textContent = 'No talent books available for the day.';
+            }
+        }
+    }
+
+    // ... Rest of your code ...
+
+    // Fetch talent book data from talentbooks.json
+    fetch('./Content/talentbooks.json')
+        .then(response => response.json())
+        .then(talentBooksData => {
+            // Calculate the current day of the week
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const today = new Date();
+            const currentDay = days[today.getDay()];
+
+            // Display talent books of the day
+            displayTalentBooksOfTheDay(currentDay, talentBooksData);
+        })
+        .catch(error => {
+            console.error('Error loading talent book data:', error);
+        });
+</script>
+</body>
+
+</html>

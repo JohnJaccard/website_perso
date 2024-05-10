@@ -1,0 +1,193 @@
+body {
+    text-align: center;
+    background-color: #262632;
+    font-family: 'Signika', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color:#f9f1e2;
+}
+
+#return-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2; /* Place it above other content */
+}
+
+.return-image {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+
+
+.dark-overlay {
+    background-color: #16161d;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px; /* Adjust the height to match your design */
+    z-index: 1; /* Place the black container above other content */
+}
+
+.dark-overlay::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto; /* Remove the 'top' property */
+    height: 75px; /* Adjust the height of the gradient */
+    background: linear-gradient(to bottom, transparent, #262632);
+}
+
+#characterList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 6px;
+    justify-content: center;
+}
+
+.character {
+    width: 240px; /* Adjusted character box width */
+    padding: 6px;
+    margin: 6px;
+    transition: opacity 0.6s;
+    border-radius: 30px;
+    background-color: #50596b;
+    border:7px #58616d solid;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    color:#f9f1e2;
+}
+
+@media (min-width: 768px) {
+    #characterList {
+        grid-template-columns: repeat(4, 1fr); /* Four characters per row on larger screens */
+    }
+}
+
+.element-icon {
+    width: 45px;
+}
+
+.character-image {
+    max-width: 100px;
+}
+
+#searchContainer {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.character:hover {
+    transform: translateY(-10px);
+    background-color: #656a75;
+}
+
+.character-details {
+    list-style-type: none;
+    text-align: center;
+    margin: 1px 0;
+}
+
+#searchQuery {
+    height: 40px;
+    background-color: #495365;
+    outline: none;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 16px;
+    color:white;
+}
+
+.filter-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin: 0 1px;
+}
+
+.element-image {
+    width: 120px;
+    height: 120px;
+    margin-right: 3px;
+}
+
+.element-filter-container {
+    position: relative;
+}
+
+.remove-filter {
+    top: 45px;
+    background-color: transparent;
+    color:#f9f1e2;
+}
+
+.element-filter-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#characterList a {
+    text-decoration: none;
+}
+
+#talentBooksOfTheDay {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    border-radius: 40px;
+    background-color: #50596b;
+    padding: 20px;
+    z-index: 999; /* Ensure it appears above all other elements */
+    font-size: 16px;
+    margin: 5px 0;
+    color:white;
+    border:7px #58616d solid;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.talent-book {
+    margin-bottom: 10px;
+}
+
+.character-image-small {
+    width: 40px; /* Adjust this size as needed */
+    height: 40px; /* Adjust this size as needed */
+    margin-right: 1px;
+}
+
+.element-image {
+    width: 30px; /* Adjust this size as needed */
+    height: 30px; /* Adjust this size as needed */
+    margin-right: 2px;
+}
+
+.talentbooktitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    #characterList {
+        justify-content: flex-start; /* Left-align characters */
+    }
+    body{
+        align-items: center;
+        margin-left:0;
+    }
+    #searchQuery {
+        height: 50px;
+        font-size: 16px;
+    }
+    .talentbooktitle {
+        font-size: 14px;
+    }
+}

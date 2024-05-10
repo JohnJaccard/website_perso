@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Character Information</title>
+    <link href='https://fonts.googleapis.com/css?family>Signika' rel='stylesheet'>
+    <link rel="stylesheet" type='text/css' href="./Content/stylecharacterpage.css" />
+</head>
+
+<body>
+<div class="dark-overlay">
+    <a href="index.html" id="return-button">
+        <img src="./Content/Images/return.png" alt="Return" class="return-image">
+    </a>
+    <h1>Character Information</h1>
+</div>
+<div id="characterInfo">
+    <!-- Character information will be displayed here -->
+</div>
+<div id="levelInfo">
+    <div class="variable-container">
+        <p class="variable-label">Start Level:</p>
+        <p>
+            <button id="decrementStartLevel" class="button-style">-</button>
+            <span id="startLevel"><b>1</b></span>
+            <button id="incrementStartLevel" class="button-style">+</button>
+        </p>
+    </div>
+    <div class="slider-container">
+        <input type="range" id="startLevelSlider" min="1" max="90" step="1" value="1">
+    </div>
+    <div class="variable-container">
+        <p class="variable-label">Max Level:</p>
+        <p>
+            <button id="decrementMaxLevel" class="button-style">-</button>
+            <span id="maxLevel"><b>1</b></span>
+            <button id="incrementMaxLevel" class="button-style">+</button>
+        </p>
+    </div>
+    <div class="slider-container">
+        <input type="range" id="maxLevelSlider" min="1" max="90" step="1" value="1">
+    </div>
+    <div class="total-exp">
+        <div class="exp-text">
+            <span id="expbookDifference">-</span>
+            <img class="expbook-image" src="./Content/Images/expbook.png" alt="Exp Book" width="30" height="30">
+        </div>
+        <div class="exp-text">
+            <span id="mora">-</span>
+            <img class="expbook-image" src="./Content/Images/mora.png" alt="Mora" width="30" height="30">
+        </div>
+        <div id="materials-list" class="materials-list">
+            <!-- Materials will be displayed here -->
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var characterInfo = document.getElementById('characterInfo');
+        var materialsList = document.getElementById('materials-list'); // Get materials list container
+
+        // Get the character name from the URL parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var characterName = urlParams.get('character');
+
+        // Fetch the character data from characters.json
+        fetch('./Content/characters.json')
+            .then(response => response.json())
+            .then(characterData => {
+                // Search for the character in the JSON data by name
+                var character = characterData.find(function (char) {
+                    return char.DisplayName === characterName;
+                });
+
+                if (character) {
+                    // Display the character information
+                    var characterImage = document.createElement('img');
+                    characterImage.classList.add('character-image');
+                    characterImage.src = './Content/Images/' + character.ImageUri;
+                    characterImage.alt = character.DisplayName;
+                    characterInfo.appendChild(characterImage);
+
+                    var characterNameElement = document.createElement('h2');
+                    characterNameElement.textContent = character.DisplayName;
+                    characterInfo.appendChild(characterNameElement);
+
+                    var characterElement = document.createElement('img');
+                    characterElement.classList.add('element-icon');
+                    characterElement.src = './Content/Images/Element_' + character.Element + '.png';
+                    characterElement.alt = character.Element;
+                    characterInfo.appendChild(characterElement);
+
+                    var characterRarity = document.createElement('p');
+                    characterRarity.textContent = 'Rarity: ' + character.Rarity + ' Star';
+                    characterInfo.appendChild(characterRarity);
+
+                    var characterRegion = document.createElement('p');
+                    characterRegion.textContent = 'Region: ' + character.Region.join(', ');
+                    characterInfo.appendChild(characterRegion);
+
+                    var characterWeapon = document.createElement('p');
+                    characterWeapon.textContent = 'Weapon: ' + character.Weapon;
+                    characterInfo.appendChild(characterWeapon);
+                } else {
+                    // If character data was not found, display a message
+                    characterInfo.textContent = 'Character not found.';
+                }
+            })
+            .catch(error => {
+                console.error('Error loading character JSON data:', error);
+            });
+    })
+    document.addEventListener('DOMContentLoaded', function () {
+        var startLevelElement = document.getElementById('startLevel');
+        var maxLevelElement = document.getElementById('maxLevel');
+        var startLevelSlider = document.getElementById('startLevelSlider');
+        var maxLevelSlider = document.getElementById('maxLevelSlider');
+        var incrementStartLevelButton = document.getElementById('incrementStartLevel');
+        var decrementStartLevelButton = document.getElementById('decrementStartLevel');
+        var incrementMaxLevelButton = document.getElementById('incrementMaxLevel');
+        var decrementMaxLevelButton = document.getElementById('decrementMaxLevel');
+
+        // Initialize startLevel and maxLevel
+        var startLevel = 1;
+        var maxLevel = 1;
+        var elevationData;
+        var expData; // Added expData variable
+
+        // Load the elevation level data from "./Content/elevationlvl.json"
+        fetch('./Content/elevationlvl.json')
+            .then(response => response.json())
+            .then(data => {
+                elevationData = data;
+                // Move the fetch for exp.json data inside the .then block
+                fetch('./Content/exp.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        expData = data;
+                        updateAndCalculate();
+                    });
+            });
+
+        function updateAndCalculate() {
+            // Function to find Total EXP by Level
+            function findTotalExpByLevel(level) {
+                return expData.Levels.find(entry => entry.Level === level)?.['Total EXP'] || 0;
+            }
+
+            // Get the materials and Mora based on the elevation level
+            var materials = [];
+            var mora = 0;
+
+            for (let i = startLevel; i <= maxLevel; i++) {
+                const elevation = elevationData.find(e => e.elevationlvl === i);
+                if (elevation) {
+                    elevation.materials.forEach(material => {
+                        if (material.itemname !== "mora") {
+                            const existingMaterial = materials.find(m => m.itemname === material.itemname);
+                            if (existingMaterial) {
+                                existingMaterial.amount += material.amount;
+                            } else {
+                                materials.push({ itemname: material.itemname, amount: material.amount });
+                            }
+                        } else {
+                            // Update Mora correctly
+                            mora += material.amount; // Adjusted the calculation
+                        }
+                    });
+                }
+            }
+
+
+            // Update displayed values
+            startLevelElement.innerHTML = '<b>' + startLevel + '</b>';
+            maxLevelElement.innerHTML = '<b>' + maxLevel + '</b>';
+            startLevelSlider.value = startLevel;
+            maxLevelSlider.value = maxLevel;
+
+            // Check constraints for startLevel and maxLevel
+            decrementStartLevelButton.style.display = startLevel > 1 ? 'block' : 'none';
+            incrementStartLevelButton.style.display = startLevel < 90 && startLevel < maxLevel ? 'block' : 'none';
+            decrementMaxLevelButton.style.display = maxLevel > 1 && maxLevel > startLevel ? 'block' : 'none';
+            incrementMaxLevelButton.style.display = maxLevel < 90 ? 'block' : 'none';
+
+            // Find Total EXP for startLevel and maxLevel
+            var startLevelExp = findTotalExpByLevel(startLevel);
+            var maxLevelExp = findTotalExpByLevel(maxLevel);
+
+            // Calculate experience point difference
+            var expDifference = maxLevelExp - startLevelExp;
+            var expbookDifference = Math.round(expDifference / 20000);
+            var totalMora = Math.round(expDifference / 5) + mora; // Include mora in totalMora
+
+            // Update the total experience points and the experience point difference
+            document.getElementById('expbookDifference').textContent = `${expbookDifference}`;
+            document.getElementById('mora').textContent = totalMora; // Include "Mora" in the displayed text
+
+            // Display the materials
+            var materialsList = document.getElementById('materials-list');
+            materialsList.innerHTML = '';
+
+            materials.forEach(material => {
+                var materialItem = document.createElement('p');
+                if (material.itemname !== "mora") {
+                    materialItem.textContent = `${material.amount}x ${material.itemname}`;
+                    materialsList.appendChild(materialItem);
+                }
+                materialsList.appendChild(materialItem);
+            });
+        }
+
+        // Add event listeners for changes in startLevel and maxLevel
+        startLevelSlider.addEventListener('input', function () {
+            startLevel = parseInt(startLevelSlider.value, 10);
+            if (startLevel > maxLevel) {
+                startLevel = maxLevel;
+            }
+            updateAndCalculate();
+        });
+
+        maxLevelSlider.addEventListener('input', function () {
+            maxLevel = parseInt(maxLevelSlider.value, 10);
+            if (maxLevel < startLevel) {
+                maxLevel = startLevel;
+            }
+            updateAndCalculate();
+        });
+
+        // Add event listeners for increment/decrement buttons
+        incrementStartLevelButton.addEventListener('click', function () {
+            if (startLevel < maxLevel && startLevel < 90) {
+                startLevel++;
+                updateAndCalculate();
+            }
+        });
+
+        decrementStartLevelButton.addEventListener('click', function () {
+            if (startLevel <= maxLevel && startLevel > 1) {
+                startLevel--;
+                updateAndCalculate();
+            }
+        });
+
+        incrementMaxLevelButton.addEventListener('click', function () {
+            if (maxLevel < 90) {
+                maxLevel++;
+                updateAndCalculate();
+            }
+        });
+
+        decrementMaxLevelButton.addEventListener('click', function () {
+            if (maxLevel > startLevel && maxLevel > 1) {
+                maxLevel--;
+                updateAndCalculate();
+            }
+        });
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,454 @@
+{
+  "Levels": [
+    {
+      "Level": 1,
+      "Next Level": 1000,
+      "Total EXP": 0
+    },
+    {
+      "Level": 2,
+      "Next Level": 1325,
+      "Total EXP": 1000
+    },
+    {
+      "Level": 3,
+      "Next Level": 1700,
+      "Total EXP": 2325
+    },
+    {
+      "Level": 4,
+      "Next Level": 2150,
+      "Total EXP": 4025
+    },
+    {
+      "Level": 5,
+      "Next Level": 2625,
+      "Total EXP": 6175
+    },
+    {
+      "Level": 6,
+      "Next Level": 3150,
+      "Total EXP": 8800
+    },
+    {
+      "Level": 7,
+      "Next Level": 3725,
+      "Total EXP": 11950
+    },
+    {
+      "Level": 8,
+      "Next Level": 4350,
+      "Total EXP": 15675
+    },
+    {
+      "Level": 9,
+      "Next Level": 5000,
+      "Total EXP": 20025
+    },
+    {
+      "Level": 10,
+      "Next Level": 5700,
+      "Total EXP": 25025
+    },
+    {
+      "Level": 11,
+      "Next Level": 6450,
+      "Total EXP": 30725
+    },
+    {
+      "Level": 12,
+      "Next Level": 7225,
+      "Total EXP": 37175
+    },
+    {
+      "Level": 13,
+      "Next Level": 8050,
+      "Total EXP": 44400
+    },
+    {
+      "Level": 14,
+      "Next Level": 8925,
+      "Total EXP": 52450
+    },
+    {
+      "Level": 15,
+      "Next Level": 9825,
+      "Total EXP": 61375
+    },
+    {
+      "Level": 16,
+      "Next Level": 10750,
+      "Total EXP": 71200
+    },
+    {
+      "Level": 17,
+      "Next Level": 11725,
+      "Total EXP": 81950
+    },
+    {
+      "Level": 18,
+      "Next Level": 12725,
+      "Total EXP": 93675
+    },
+    {
+      "Level": 19,
+      "Next Level": 13775,
+      "Total EXP": 106400
+    },
+    {
+      "Level": 20,
+      "Next Level": 14875,
+      "Total EXP": 120175
+    },
+    {
+      "Level": 21,
+      "Next Level": 16800,
+      "Total EXP": 135050
+    },
+    {
+      "Level": 22,
+      "Next Level": 18000,
+      "Total EXP": 151850
+    },
+    {
+      "Level": 23,
+      "Next Level": 19250,
+      "Total EXP": 169850
+    },
+    {
+      "Level": 24,
+      "Next Level": 20550,
+      "Total EXP": 189100
+    },
+    {
+      "Level": 25,
+      "Next Level": 21875,
+      "Total EXP": 209650
+    },
+    {
+      "Level": 26,
+      "Next Level": 23250,
+      "Total EXP": 231525
+    },
+    {
+      "Level": 27,
+      "Next Level": 24650,
+      "Total EXP": 254775
+    },
+    {
+      "Level": 28,
+      "Next Level": 26100,
+      "Total EXP": 279425
+    },
+    {
+      "Level": 29,
+      "Next Level": 27575,
+      "Total EXP": 305525
+    },
+    {
+      "Level": 30,
+      "Next Level": 29100,
+      "Total EXP": 333100
+    },
+    {
+      "Level": 31,
+      "Next Level": 30650,
+      "Total EXP": 362200
+    },
+    {
+      "Level": 32,
+      "Next Level": 32250,
+      "Total EXP": 392850
+    },
+    {
+      "Level": 33,
+      "Next Level": 33875,
+      "Total EXP": 425100
+    },
+    {
+      "Level": 34,
+      "Next Level": 35550,
+      "Total EXP": 458975
+    },
+    {
+      "Level": 35,
+      "Next Level": 37250,
+      "Total EXP": 494525
+    },
+    {
+      "Level": 36,
+      "Next Level": 38975,
+      "Total EXP": 531775
+    },
+    {
+      "Level": 37,
+      "Next Level": 40750,
+      "Total EXP": 570750
+    },
+    {
+      "Level": 38,
+      "Next Level": 42575,
+      "Total EXP": 611500
+    },
+    {
+      "Level": 39,
+      "Next Level": 44425,
+      "Total EXP": 654075
+    },
+    {
+      "Level": 40,
+      "Next Level": 46300,
+      "Total EXP": 698500
+    },
+    {
+      "Level": 41,
+      "Next Level": 50625,
+      "Total EXP": 744800
+    },
+    {
+      "Level": 42,
+      "Next Level": 52700,
+      "Total EXP": 795425
+    },
+    {
+      "Level": 43,
+      "Next Level": 54775,
+      "Total EXP": 848125
+    },
+    {
+      "Level": 44,
+      "Next Level": 56900,
+      "Total EXP": 902900
+    },
+    {
+      "Level": 45,
+      "Next Level": 59075,
+      "Total EXP": 959800
+    },
+    {
+      "Level": 46,
+      "Next Level": 61275,
+      "Total EXP": 1018875
+    },
+    {
+      "Level": 47,
+      "Next Level": 63525,
+      "Total EXP": 1080150
+    },
+    {
+      "Level": 48,
+      "Next Level": 65800,
+      "Total EXP": 1143675
+    },
+    {
+      "Level": 49,
+      "Next Level": 68125,
+      "Total EXP": 1209475
+    },
+    {
+      "Level": 50,
+      "Next Level": 70475,
+      "Total EXP": 1277600
+    },
+    {
+      "Level": 51,
+      "Next Level": 76500,
+      "Total EXP": 1348075
+    },
+    {
+      "Level": 52,
+      "Next Level": 79050,
+      "Total EXP": 1424575
+    },
+    {
+      "Level": 53,
+      "Next Level": 81650,
+      "Total EXP": 1503625
+    },
+    {
+      "Level": 54,
+      "Next Level": 84275,
+      "Total EXP": 1585275
+    },
+    {
+      "Level": 55,
+      "Next Level": 86950,
+      "Total EXP": 1669550
+    },
+    {
+      "Level": 56,
+      "Next Level": 89650,
+      "Total EXP": 1756500
+    },
+    {
+      "Level": 57,
+      "Next Level": 92400,
+      "Total EXP": 1846150
+    },
+    {
+      "Level": 58,
+      "Next Level": 95175,
+      "Total EXP": 1938550
+    },
+    {
+      "Level": 59,
+      "Next Level": 98000,
+      "Total EXP": 2033725
+    },
+    {
+      "Level": 60,
+      "Next Level": 100875,
+      "Total EXP": 2131725
+    },
+    {
+      "Level": 61,
+      "Next Level": 108950,
+      "Total EXP": 2232600
+    },
+    {
+      "Level": 62,
+      "Next Level": 112050,
+      "Total EXP": 2341550
+    },
+    {
+      "Level": 63,
+      "Next Level": 115175,
+      "Total EXP": 2453600
+    },
+    {
+      "Level": 64,
+      "Next Level": 118325,
+      "Total EXP": 2568775
+    },
+    {
+      "Level": 65,
+      "Next Level": 121525,
+      "Total EXP": 2687100
+    },
+    {
+      "Level": 66,
+      "Next Level": 124775,
+      "Total EXP": 2808625
+    },
+    {
+      "Level": 67,
+      "Next Level": 128075,
+      "Total EXP": 2933400
+    },
+    {
+      "Level": 68,
+      "Next Level": 131400,
+      "Total EXP": 3061475
+    },
+    {
+      "Level": 69,
+      "Next Level": 134775,
+      "Total EXP": 3192875
+    },
+    {
+      "Level": 70,
+      "Next Level": 138175,
+      "Total EXP": 3327650
+    },
+    {
+      "Level": 71,
+      "Next Level": 148700,
+      "Total EXP": 3465825
+    },
+    {
+      "Level": 72,
+      "Next Level": 152375,
+      "Total EXP": 3614525
+    },
+    {
+      "Level": 73,
+      "Next Level": 156075,
+      "Total EXP": 3766900
+    },
+    {
+      "Level": 74,
+      "Next Level": 159825,
+      "Total EXP": 3922975
+    },
+    {
+      "Level": 75,
+      "Next Level": 163600,
+      "Total EXP": 4082800
+    },
+    {
+      "Level": 76,
+      "Next Level": 167425,
+      "Total EXP": 4246400
+    },
+    {
+      "Level": 77,
+      "Next Level": 171300,
+      "Total EXP": 4413825
+    },
+    {
+      "Level": 78,
+      "Next Level": 175225,
+      "Total EXP": 4585125
+    },
+    {
+      "Level": 79,
+      "Next Level": 179175,
+      "Total EXP": 4760350
+    },
+    {
+      "Level": 80,
+      "Next Level": 183175,
+      "Total EXP": 4939525
+    },
+    {
+      "Level": 81,
+      "Next Level": 216225,
+      "Total EXP": 5122700
+    },
+    {
+      "Level": 82,
+      "Next Level": 243025,
+      "Total EXP": 5338925
+    },
+    {
+      "Level": 83,
+      "Next Level": 273100,
+      "Total EXP": 5581950
+    },
+    {
+      "Level": 84,
+      "Next Level": 306800,
+      "Total EXP": 5855050
+    },
+    {
+      "Level": 85,
+      "Next Level": 344600,
+      "Total EXP": 6161850
+    },
+    {
+      "Level": 86,
+      "Next Level": 386950,
+      "Total EXP": 6506450
+    },
+    {
+      "Level": 87,
+      "Next Level": 434425,
+      "Total EXP": 6893400
+    },
+    {
+      "Level": 88,
+      "Next Level": 487625,
+      "Total EXP": 7327825
+    },
+    {
+      "Level": 89,
+      "Next Level": 547200,
+      "Total EXP": 7815450
+    },
+    {
+      "Level": 90,
+      "Next Level": 1000000,
+      "Total EXP": 8362650
+    }
+  ]
+}

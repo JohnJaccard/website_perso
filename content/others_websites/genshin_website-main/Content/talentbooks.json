@@ -1,0 +1,226 @@
+[
+  {
+    "Id": 1,
+    "Region": "Monstadt",
+    "Days": [
+      "Monday",
+      "Thursday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de la Liberté",
+      "blue": "Guide de la Liberté",
+      "violet": "Philosophie de la Liberté"
+    }
+  },
+
+  {
+    "Id": 2,
+    "Region": "Monstadt",
+    "Days": [
+      "Tuesday",
+      "Friday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de la Résistance",
+      "blue": "Guide de la Résistance",
+      "violet": "Philosophie de la Résistance"
+    }
+  },
+
+  {
+    "Id": 3,
+    "Region": "Monstadt",
+    "Days": [
+      "Wednesday",
+      "Saturday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de la Poésie",
+      "blue": "Guide de la Poésie",
+      "violet": "Philosophie de la Poésie"
+    }
+  },
+
+  {
+    "Id": 4,
+    "Region": "Liyue",
+    "Days": [
+      "Monday",
+      "Thursday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de la Prospérité",
+      "blue": "Guide de la Prospérité",
+      "violet": "Philosophie de la Prospérité"
+    }
+  },
+
+  {
+    "Id": 5,
+    "Region": "Liyue",
+    "Days": [
+      "Tuesday",
+      "Friday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de la Diligence",
+      "blue": "Guide de la Diligence",
+      "violet": "Philosophie de la Diligence"
+    }
+  },
+
+  {
+    "Id": 6,
+    "Region": "Liyue",
+    "Days": [
+      "Wednesday",
+      "Saturday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de l'Or",
+      "blue": "Guide de l'Or",
+      "violet": "Philosophie de l'Or"
+    }
+  },
+
+  {
+    "Id": 7,
+    "Region": "Inazuma",
+    "Days": [
+      "Monday",
+      "Thursday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de l'Éphémère",
+      "blue": "Guide de l'Éphémère",
+      "violet": "Philosophie de l'Éphémère"
+    }
+  },
+
+  {
+    "Id": 8,
+    "Region": "Inazuma",
+    "Days": [
+      "Tuesday",
+      "Friday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de l'Élégance",
+      "blue": "Guide de l'Élégance",
+      "violet": "Philosophie de l'Élégance"
+    }
+  },
+
+  {
+    "Id": 9,
+    "Region": "Inazuma",
+    "Days": [
+      "Wednesday",
+      "Saturday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de la Lumière",
+      "blue": "Guide de la Lumière",
+      "violet": "Philosophie de la Lumière"
+    }
+  },
+
+  {
+    "Id": 10,
+    "Region": "Sumeru",
+    "Days": [
+      "Monday",
+      "Thursday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de l'Admonestation",
+      "blue": "Guide de l'Admonestation",
+      "violet": "Philosophie de l'Admonestation"
+    }
+  },
+
+  {
+    "Id": 11,
+    "Region": "Sumeru",
+    "Days": [
+      "Tuesday",
+      "Friday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de l'Ingénuité",
+      "blue": "Guide de l'Ingénuité",
+      "violet": "Philosophie de l'Ingénuité"
+    }
+  },
+
+  {
+    "Id": 12,
+    "Region": "Sumeru",
+    "Days": [
+      "Wednesday",
+      "Saturday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de l'Usage",
+      "blue": "Guide de l'Usage",
+      "violet": "Philosophie de l'Usage"
+    }
+  },
+
+  {
+    "Id": 13,
+    "Region": "Fontaine",
+    "Days": [
+      "Monday",
+      "Thursday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de l'Équité",
+      "blue": "Guide de l'Équité",
+      "violet": "Philosophie de l'Équité"
+    }
+  },
+
+  {
+    "Id": 14,
+    "Region": "Fontaine",
+    "Days": [
+      "Tuesday",
+      "Friday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de la Justice",
+      "blue": "Guide de la Justice",
+      "violet": "Philosophie de la Justice"
+    }
+  },
+
+  {
+    "Id": 15,
+    "Region": "Fontaine",
+    "Days": [
+      "Wednesday",
+      "Saturday",
+      "Sunday"
+    ],
+    "Name": {
+      "green":"Enseignement de l'Ordre",
+      "blue": "Guide de l'Ordre",
+      "violet": "Philosophie de l'Ordre"
+    }
+  }
+]
