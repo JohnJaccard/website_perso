@@ -12,6 +12,10 @@ body {
     animation: scrollBackground 60s linear infinite;
 }
 
+#turnkey-credit #override {
+    display: none;
+}
+
 @keyframes scrollBackground {
     0% {
         background-position: 0 0;
