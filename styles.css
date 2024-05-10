@@ -12,8 +12,22 @@ body {
     animation: scrollBackground 60s linear infinite;
 }
 
+h1{
+    font-size: 4vw;
+    margin-bottom: 5px;
+}
+
 #turnkey-credit #override {
-    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 @keyframes scrollBackground {
@@ -56,7 +70,6 @@ body {
     justify-content: space-between;
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 100px;
 }
 
 .white-box:hover::before {
@@ -99,6 +112,9 @@ body {
 #twitch {
     display: flex;
     align-items: center; /* Aligne les éléments enfants verticalement */
+    width:1500px;
+    border-radius: 30px;
+    justify-content: flex-start;
 }
 
 .left-content {
@@ -107,8 +123,10 @@ body {
 }
 
 .right-content {
-    padding-right: 100px; /* Ajoute un peu d'espace à droite du texte */
-    font-size: 50px;
+    padding-right: 125px; /* Ajoute un peu d'espace à droite du texte */
+    font-size: 75px;
+    text-shadow: 2px 2px 4px #000000, 0 0 10px rgba(0, 0, 0, 0.8); /* Réapplique l'ombre */
+    text-decoration: none;
 }
 
 .images{
@@ -138,12 +156,42 @@ footer {
     border-radius: 10px;
 }
 
+#genshin{
+    width:500px;
+    border-radius: 30px;
+
+}
 
 @media only screen and (max-width: 768px) {
+    .white-box p {
+        font-size: 3vh;
+    }
+
+    h1 {
+        font-size: 7vw; /* Ajustez la taille de police pour les écrans plus petits */
+    }
+    body{
+        padding-top: 50px;
+    }
+    .content {
+        position: absolute;
+        top: 30%; /* Ajustez la position verticale selon vos préférences */
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #twitch, #genshin {
+        width: 80%; /* Ajustez la largeur des éléments */
+        max-width: 300px; /* Limitez la largeur maximale pour éviter le débordement */
+        margin: 10px auto; /* Centrez les éléments en utilisant la marge automatique */
+    }
     /* Ajoutez les styles suivants pour la vue mobile */
     .left-content img {
-        height: 140px;
-        width: auto;
+        width:100px;
+        height: 80px;
+    }
+    .right-content{
+        padding-right: 50px;
     }
     /* Style pour les white-box */
     .container {
@@ -153,9 +201,9 @@ footer {
     }
 
     .white-box {
-        width: 150px; /* Définir la largeur à 50% avec une marge de 20px */
-        height: 150px; /* Définir la hauteur à 50% avec une marge de 20px */
-        margin: 10px; /* Ajouter des marges de 10px autour de chaque div */
+        height:25%;
+        width: 25%; /* Réduisez la largeur des divs */
+        max-width: 150px; /* Limitez la largeur maximale pour éviter le débordement */
     }
 
     @keyframes moveText {
@@ -170,10 +218,6 @@ footer {
     }
 
     .images {
-        max-width: 90%; /* Ajuste la largeur de l'image */
-    }
-
-    .white-box p {
-        font-size: 40px;
+        max-width: 80%; /* Ajuste la largeur de l'image */
     }
 }
