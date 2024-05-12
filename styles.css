@@ -163,15 +163,21 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
+    .white-box:hover::before {
+        font-size: 7px;
+        bottom: 2px; /* Adjustez la position verticale du texte */
+        right: 2px; /* Ajustez la position horizontale du texte */
+        padding: 2px 5px;
+    }
     .white-box p {
-        font-size: 3vh;
+        font-size: 4vh;
     }
 
     h1 {
         font-size: 7vw; /* Ajustez la taille de police pour les écrans plus petits */
     }
     body{
-        padding-top: 50px;
+        padding-top: 10px;
     }
     .content {
         position: absolute;
@@ -187,11 +193,10 @@ footer {
     }
     /* Ajoutez les styles suivants pour la vue mobile */
     .left-content img {
-        width:100px;
-        height: 80px;
+        width:10vh;
     }
     .right-content{
-        padding-right: 50px;
+        padding-right: 10px;
     }
     /* Style pour les white-box */
     .container {
