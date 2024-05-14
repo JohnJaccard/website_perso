@@ -68,7 +68,7 @@ h1{
     display: flex;
     flex-wrap: wrap; /* Permet l'enroulement des éléments */
     justify-content: space-between;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -112,7 +112,7 @@ h1{
 #twitch {
     display: flex;
     align-items: center; /* Aligne les éléments enfants verticalement */
-    width:1500px;
+    width:1400px;
     border-radius: 30px;
     justify-content: flex-start;
 }
@@ -123,8 +123,8 @@ h1{
 }
 
 .right-content {
-    padding-right: 125px; /* Ajoute un peu d'espace à droite du texte */
-    font-size: 75px;
+    padding-right: 105px; /* Ajoute un peu d'espace à droite du texte */
+    font-size: 65px;
     text-shadow: 2px 2px 4px #000000, 0 0 10px rgba(0, 0, 0, 0.8); /* Réapplique l'ombre */
     text-decoration: none;
 }
@@ -157,12 +157,11 @@ footer {
 }
 
 #genshin{
-    width:500px;
+    width:400px;
     border-radius: 30px;
-
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px){
     .white-box:hover::before {
         font-size: 7px;
         bottom: 2px; /* Adjustez la position verticale du texte */
@@ -190,6 +189,13 @@ footer {
         width: 80%; /* Ajustez la largeur des éléments */
         max-width: 300px; /* Limitez la largeur maximale pour éviter le débordement */
         margin: 10px auto; /* Centrez les éléments en utilisant la marge automatique */
+    }
+
+    #genshin {
+        height: 80px;
+    }
+    #genshin img{
+    height: 60px;
     }
     /* Ajoutez les styles suivants pour la vue mobile */
     .left-content img {
