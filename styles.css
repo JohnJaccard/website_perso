@@ -48,7 +48,7 @@ h1{
     animation: moveText 4s forwards cubic-bezier(0.25, 0.1, 0.25, 1);
     animation-delay: 2s;
     padding: 20px;
-    font-size: 50px; /* Taille de police initiale */
+    font-size: 80%; /* Taille de police initiale */
     text-shadow: 2px 2px 4px #000000, 0 0 10px rgba(0, 0, 0, 0.8); /* Réapplique l'ombre */
     white-space: nowrap; /* Empêche les retours à la ligne */
 }
@@ -56,7 +56,6 @@ h1{
 @keyframes moveText {
     0% {
         top: 50%; /* Départ au milieu */
-        font-size: 50px; /* Taille de police plus grande */
     }
     100% {
         top: 100px; /* Arrivée en haut */
@@ -70,6 +69,7 @@ h1{
     justify-content: space-between;
     max-width: 700px;
     margin: 0 auto;
+    max-height: 60vh;
 }
 
 .white-box:hover::before {
@@ -220,7 +220,7 @@ footer {
     @keyframes moveText {
         0% {
             top: 50%; /* Départ au milieu */
-            font-size: 25px; /* Taille de police plus grande */
+            font-size: 80%; /* Taille de police plus grande */
         }
         100% {
             top: 100px; /* Arrivée en haut */
